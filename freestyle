@@ -1,0 +1,37 @@
+html:
+ls
+docker build -t sathishsembulingam/html-app .
+docker login -u sathishsembulingam -p ssathishmrp105
+docker rm -f sathishsembulingam/html-app 
+docker run -d -p 83:80 sathishsembulingam/html-app
+docker ps
+
+java:
+ls
+mvn install 
+docker build -t sathishsembulingam/java-app .
+docker login -u sathishsembulingam -p ssathishmrp105
+docker push sathishsembulingam/java-app
+docker rm -f sathish
+docker run -d --name sathish -p 8082:8080 sathishsembulingam/java-app
+docker ps
+
+node:
+ls
+docker build -t sathishsembulingam/note-app .
+docker login -u sathishsembulingam -p ssathishmrp105
+docker push sathishsembulingam/note-app
+docker  rm -f app
+docker run -d --name app  -p 9003:9000 sathishsembulingam/note-app
+docker ps
+
+python:
+ls
+docker build -t sathishsembulingam/note-app .
+docker login -u sathishsembulingam -p ssathishmrp105
+docker push sathishsembulingam/note-app
+docker  rm -f app
+docker run -d --name app  -p 9003:9000 sathishsembulingam/note-app
+docker ps
+
+
